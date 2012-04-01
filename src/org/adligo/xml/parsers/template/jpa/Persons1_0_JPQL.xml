@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<templates>
+
+  <template name="persons">
+  SELECT 
+  <param name="name"> fname + ' ' + lname </param>
+  <param name="namedId"> tid, version, fname + ' ' + lname </param>
+  <param name="default">p</param>
+  FROM persons p
+  <param name="where" nested_separator=" AND "> WHERE
+    <param name="id" delimiter="," ><operator id="2" /> tid <operator/><value/><operator id="1" /> </param>
+    <param name="edited" delimiter="," separator=" OR " pre="(" post=")"> p.edited <operator/> <value/> </param>
+    <param name="is_alive" delimiter="," separator=" OR " pre="(" post=")"> is_alive <operator/> <value/> </param>
+    <param name="height" delimiter="," separator=" OR " pre="(" post=")"> height <operator/> <value/> </param>
+    <param name="fname" delimiter="," separator=" OR " pre="(" post=")"> fname <operator/> <value/> </param>
+    <param name="mname" delimiter="," separator=" OR " pre="(" post=")"> mname <operator/> <value/> </param>
+    <param name="lname" delimiter="," separator=" OR " pre="(" post=")"> lname <operator/> <value/> </param>
+    <param name="nickname" delimiter="," separator=" OR " pre="(" post=")"> nickname <operator/> <value/> </param>
+    <param name="birthday" >
+      (<param name="range" separator=" OR " nested_separator=" AND ">
+        (<param name="start_range"> birthday <operator/> <value/> </param>
+          <param name="end_range"> birthday <operator/> <value/> </param>
+        )
+        </param>
+      )
+    </param>
+    <param name="persons_to_addresses" nested_separator=" AND ">
+        <operator/> EXISTS (SELECT tid FROM persons_to_addresses PA WHERE P.tid = PA.person AND
+        	EXISTS (SELECT tid FROM addresses A WHERE PA.address = A.tid AND
+        <param name="edited" >
+          (<param name="range" separator=" OR " nested_separator=" AND ">
+            (<param name="start_range"> A.edited <operator/><value/></param>
+            <param name="end_range"> A.edited <operator/><value/></param>)
+          </param>)
+        </param>
+        <param name="edited_by" delimiter="," > A.edited_by <operator/><value/><operator id="1"/></param>
+        <param name="address" separator=" OR " pre="(" post=")"> A.address <operator/> <value/></param>
+        <param name="zip" separator=" OR " pre="(" post=")"> A.zip <operator/> <value/></param>
+        <param name="type" delimiter=",">  PA.type <operator/><value/><operator id="1"/></param>
+    	))
+    </param>
+  </param>
+  </template>
+</templates>

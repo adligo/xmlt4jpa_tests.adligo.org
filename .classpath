@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/adi"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/adig"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/i_log"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/i_util"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/params"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/xmlt"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/xmlt-tests"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/xmlt4jpa"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/tests"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="var" path="JAVA_EE3_HOME/glassfish/lib/javaee.jar"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/required/antlr-2.7.7.jar"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/required/dom4j-1.6.1.jar"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/required/hibernate-commons-annotations-4.0.1.Final.jar"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/required/hibernate-core-4.1.1.Final.jar" sourcepath="/HIBERNATE_4_HOME/project/hibernate-core"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/required/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/required/javassist-3.15.0-GA.jar"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/required/jboss-logging-3.1.0.GA.jar"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/required/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/jpa/hibernate-entitymanager-4.1.1.Final.jar" sourcepath="/HIBERNATE_4_HOME/project/hibernate-entitymanager"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/i_storage"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/i_storage_tests"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
