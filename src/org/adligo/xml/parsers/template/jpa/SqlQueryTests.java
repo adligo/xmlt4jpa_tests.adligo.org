@@ -38,7 +38,13 @@ public class SqlQueryTests extends ATest {
 		emf.close();
 	}
 	
-	public void testJpaSqlQuery() {
+	public void testJpaSqlQuery() throws Exception  {
+		//for (int i = 0; i < 100; i++) {
+			assertSqlQuery();
+		//}
+	}
+
+	public void assertSqlQuery() {
 		Params params = new Params();
 		params.addParam("default");
 		Params where_params = params.addWhereParams();
@@ -68,7 +74,18 @@ public class SqlQueryTests extends ATest {
 		System.out.println("yea " + person.getFname());
 	}
 	
-	public void testJpaSqlObtainerQuery() {
+	public void testJpaSqlObtainerQuery() throws Exception {
+		
+		//for (int i = 0; i < 100; i++) {
+			assertSqlObtainerQuery();
+		/*	
+		}
+		System.out.println("testing for memory leak");
+		Thread.sleep(Integer.MAX_VALUE);
+		*/
+	}
+
+	public void assertSqlObtainerQuery() {
 		Params params = new Params();
 		params.addParam("default");
 		Params where_params = params.addWhereParams();
