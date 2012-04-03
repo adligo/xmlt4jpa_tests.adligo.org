@@ -77,9 +77,8 @@ public class SqlQueryTests extends ATest {
 	public void testJpaSqlObtainerQuery() throws Exception {
 		
 		//for (int i = 0; i < 100; i++) {
-			assertSqlObtainerQuery();
-		/*	
-		}
+			assertSqlObtainerQuery();	
+			/*	
 		System.out.println("testing for memory leak");
 		Thread.sleep(Integer.MAX_VALUE);
 		*/
