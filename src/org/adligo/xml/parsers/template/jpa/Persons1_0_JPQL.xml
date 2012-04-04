@@ -41,4 +41,8 @@
     </param>
   </param>
   </template>
+  <template name="personsUpdate">
+  	UPDATE persons SET nickname = 'the captian'
+  	WHERE tid = <param name="tid"><value/></param>
+  </template>
 </templates>

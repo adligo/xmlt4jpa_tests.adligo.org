@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import org.adligo.i.storage.EntityModifier;
@@ -39,7 +40,7 @@ public class JpqlQueryTests extends ATest {
 		emf.close();
 	}
 	
-	public void testJpaSqlQuery() {
+	public void testJpaQuery() {
 		Params params = new Params();
 		params.addParam("default");
 		Params where_params = params.addWhereParams();
@@ -68,7 +69,7 @@ public class JpqlQueryTests extends ATest {
 		System.out.println("yea " + person.getFname());
 	}
 	
-	public void testJpaSqlObtainerQuery() {
+	public void testJpaObtainerQuery() {
 		Params params = new Params();
 		params.addParam("default");
 		Params where_params = params.addWhereParams();
@@ -99,7 +100,7 @@ public class JpqlQueryTests extends ATest {
 		System.out.println("yea " + person.getFname());
 	}
 	
-	public void testJpaSqlModifierQuery() {
+	public void testJpaModifierQuery() {
 		Params params = new Params();
 		params.addParam("default");
 		Params where_params = params.addWhereParams();
@@ -109,13 +110,13 @@ public class JpqlQueryTests extends ATest {
 		
 		EntityManager em = emf.createEntityManager();
 		EntityModifier emod = new EntityModifier(em);
-		JpaReadWriteEngineInput input = new JpaReadWriteEngineInput();
+		JpaReadOnlyEngineInput input = new JpaReadOnlyEngineInput();
 		input.setTemplate(personsTemp);
-		input.setEntityModifier(emod);
+		input.setEntityObtainer(emod);
 		input.setAllowedOperators(BaseSqlOperators.OPERATORS);
 		input.setParams(params);
 		
-		I_ReadWriteTypedQuery<JpaMockPerson> query = 
+		I_TypedQuery<JpaMockPerson> query = 
 				JpaTemplateParserEngine.parseJPQL(
 						input, JpaMockPerson.class);
 		List<JpaMockPerson> persons = query.getResultList();
@@ -132,7 +133,7 @@ public class JpqlQueryTests extends ATest {
 	}
 	
 	
-	public void testJpaSqlObtainerQueryFirstAndLastNameOnly() {
+	public void testJpaObtainerQueryFirstAndLastNameOnly() {
 		Params params = new Params();
 		params.addParam("name");
 		Params where_params = params.addWhereParams();
@@ -157,6 +158,27 @@ public class JpqlQueryTests extends ATest {
 		assertEquals("john doe", persons.get(0));
 		assertEquals("lisa Smith", persons.get(1));
 		
+		em.close();
+	}
+	
+	public void testJpaUpdate() {
+		Params params = new Params();
+		params.addParam("tid", 1);
+		
+		
+		EntityManager em = emf.createEntityManager();
+		EntityModifier emod = new EntityModifier(em);
+		JpaReadWriteEngineInput input = new JpaReadWriteEngineInput();
+		input.setTemplate(templates.getTemplate("personsUpdate"));
+		input.setEntityModifier(emod);
+		input.setAllowedOperators(BaseSqlOperators.OPERATORS);
+		input.setParams(params);
+		
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+		int result = JpaTemplateParserEngine.executeUpdate(input);
+		assertEquals(1, result);
+		tran.commit();
 		em.close();
 	}
 }

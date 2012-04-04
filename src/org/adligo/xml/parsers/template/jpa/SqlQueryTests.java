@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import org.adligo.i.storage.EntityModifier;
@@ -23,6 +24,8 @@ import org.adligo.xml.parsers.template.jdbc.BaseSqlOperators;
 public class SqlQueryTests extends ATest {
 	private Templates templates = new Templates(
 			"/org/adligo/tests/xml/parsers/template/jdbc/Persons2_0_SQL.xml", true);
+	private Templates updateTemplates = new Templates(
+			"/org/adligo/tests/xml/parsers/template/jdbc/ExecuteUpdate.xml", true);
 	private EntityManagerFactory emf;
 	
 	public void setUp() throws Exception {
@@ -116,13 +119,13 @@ public class SqlQueryTests extends ATest {
 		System.out.println("yea " + person.getFname());
 	}
 	
+	
 	public void testJpaSqlModifierQuery() {
 		Params params = new Params();
-		params.addParam("default");
-		Params where_params = params.addWhereParams();
-		where_params.addParam("lname",SqlOperators.EQUALS, "doe");
+		params.addParam("name", "foo");
+		params.addParam("tid", 1);
 		
-		Template personsTemp = templates.getTemplate("persons");
+		Template personsTemp = updateTemplates.getTemplate("insert");
 		
 		EntityManager em = emf.createEntityManager();
 		EntityModifier emod = new EntityModifier(em);
@@ -132,18 +135,11 @@ public class SqlQueryTests extends ATest {
 		input.setAllowedOperators(BaseSqlOperators.OPERATORS);
 		input.setParams(params);
 		
-		I_Query query = JpaTemplateParserEngine.parseNative(input, JpaMockPerson.class);
-		@SuppressWarnings("unchecked")
-		List<JpaMockPerson> persons = (List<JpaMockPerson>) query.getResultList();
-		
-		assertEquals(1, persons.size());
-		JpaMockPerson person = persons.get(0);
-		assertEquals(new Integer(1), person.getTid());
-		assertEquals(new Integer(0), person.getVersion());
-		assertEquals("john", person.getFname());
-		assertEquals("doe", person.getLname());
-		
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+		int result = JpaTemplateParserEngine.executeNativeUpdate(input);
+		assertEquals(1, result);
+		tran.commit();
 		em.close();
-		System.out.println("yea " + person.getFname());
 	}
 }
