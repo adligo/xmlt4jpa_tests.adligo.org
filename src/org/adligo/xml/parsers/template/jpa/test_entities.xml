@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--  note among other sna-foos when trying to port to JPA
+  I have found that you can't even use JPQL with entities that are mapped
+  through hibernate mappings.   Since I need to use hibernate mappings to do 
+  interfaces for some of my internal entity fields (since I have been doing this 
+  with hibernate for several years), I can't even use JPQL in my code :(
+  
+  So I am still recommending straight SQL and Hibernate mappings,
+  hopefully JPA 3 will fix some of these problems.
+  
+  I think JPA now needs 
+  nativeQueries (which will are really native ie SQL)
+  providerQueries (which are in the providers query language ie HQL)
+  and
+  japQueries (in the case where you used JPA mappings then you can finally use JPQL) 
+ -->
 <entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm classpath:/org/adligo/i/storage/orm_2_0.xsd"

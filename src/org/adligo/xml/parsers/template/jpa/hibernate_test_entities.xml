@@ -1,0 +1,40 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="org.adligo.xml.parsers.template.jpa.JpaMockPerson" table="persons">
+        
+            <id name="tid"/>
+            <property name="version"/>
+            <property name="edited"/>
+            <property name="edited_by"/>
+            <property name="fname"/>
+	        <property name="mname"/>
+	        <property name="lname"/>
+	        <property name="nickname"/>
+	        <property name="birthday"/>
+    </class>
+    
+     <class name="org.adligo.xml.parsers.template.jpa.JpaMockPersonToAddress" table="persons_to_addresses">
+           <id name="tid"/>
+           <property name="person"/>
+           <property name="address"/>
+           <property name="type"/>
+    </class>
+
+     <class name="org.adligo.xml.parsers.template.jpa.JpaMockAddress" table="addresses">
+            <id name="tid"/>
+            <property name="version"/>
+            <property name="country"/>
+            <property name="sub"/>
+            
+            <property name="city"/>
+            <property name="zip"/>
+            <property name="address"/>
+            
+            <property name="unit"/>
+            <property name="edited"/>
+            <property name="edited_by"/>
+    </class>    
+</hibernate-mapping>

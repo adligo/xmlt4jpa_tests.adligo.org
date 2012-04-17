@@ -1,7 +1,5 @@
 package org.adligo.xml.parsers.template.jpa;
 
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,14 +7,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
+import org.adligo.i.adig.client.I_GCheckedInvoker;
 import org.adligo.i.storage.EntityModifier;
 import org.adligo.i.storage.EntityObtainer;
 import org.adligo.i.storage.I_Query;
+import org.adligo.i.storage.StorageWrappers;
 import org.adligo.i.storage.entities.MockJpaDb;
 import org.adligo.models.params.client.Params;
 import org.adligo.models.params.client.SqlOperators;
 import org.adligo.tests.ATest;
-import org.adligo.tests.xml.parsers.template.jdbc.MockDatabase;
 import org.adligo.xml.parsers.template.Template;
 import org.adligo.xml.parsers.template.Templates;
 import org.adligo.xml.parsers.template.jdbc.BaseSqlOperators;
@@ -29,16 +28,13 @@ public class SqlQueryTests extends ATest {
 	private EntityManagerFactory emf;
 	
 	public void setUp() throws Exception {
-		MockDatabase.createTestDb();
-		List<InputStream> inputs = new ArrayList<InputStream>();
-		inputs.add(
-				JpaMockPerson.class.getResourceAsStream(
-				"/org/adligo/xml/parsers/template/jpa/test_entities.xml"));
-		emf = MockJpaDb.createEntityManagerFactory(inputs);
+		MockJpaDb.commonSetup(new MockJpaHibernateMappings());
+		CreateJpaDb.createDb();
+		emf = MockJpaDb.getReadWriteEntityManagerFactory();
 	}
 	
 	public void tearDown() throws Exception {
-		emf.close();
+		MockJpaDb.commonTearDown();
 	}
 	
 	public void testJpaSqlQuery() throws Exception  {

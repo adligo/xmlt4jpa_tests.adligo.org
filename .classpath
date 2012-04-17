@@ -24,5 +24,6 @@
 	<classpathentry kind="var" path="HIBERNATE_4_HOME/lib/jpa/hibernate-entitymanager-4.1.1.Final.jar" sourcepath="/HIBERNATE_4_HOME/project/hibernate-entitymanager"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_storage"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_storage_tests"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hibernate_storage"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
