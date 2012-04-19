@@ -10,8 +10,8 @@ import javax.persistence.TypedQuery;
 import javax.persistence.metamodel.EntityType;
 
 import org.adligo.i.adig.client.I_GCheckedInvoker;
-import org.adligo.i.storage.EntityModifier;
-import org.adligo.i.storage.EntityObtainer;
+import org.adligo.i.storage.ReadWriteConnection;
+import org.adligo.i.storage.ReadOnlyConnection;
 import org.adligo.i.storage.I_TypedQuery;
 import org.adligo.i.storage.StorageWrappers;
 import org.adligo.i.storage.entities.MockJpaDb;
@@ -82,7 +82,7 @@ public class JpqlQueryTests extends ATest {
 		Template personsTemp = templates.getTemplate("persons");
 		
 		EntityManager em = emf.createEntityManager();
-		EntityObtainer eo = new EntityObtainer(em);
+		ReadOnlyConnection eo = new ReadOnlyConnection(em);
 		JpaReadOnlyEngineInput input = new JpaReadOnlyEngineInput();
 		input.setTemplate(personsTemp);
 		input.setEntityObtainer(eo);
@@ -112,7 +112,7 @@ public class JpqlQueryTests extends ATest {
 		Template personsTemp = templates.getTemplate("persons");
 		
 		EntityManager em = emf.createEntityManager();
-		EntityModifier emod = new EntityModifier(em);
+		ReadWriteConnection emod = new ReadWriteConnection(em);
 		JpaReadOnlyEngineInput input = new JpaReadOnlyEngineInput();
 		input.setTemplate(personsTemp);
 		input.setEntityObtainer(emod);
@@ -146,7 +146,7 @@ public class JpqlQueryTests extends ATest {
 		addressParams.addParam("zip", SqlOperators.EQUALS, 60660);
 		
 		EntityManager em = emf.createEntityManager();
-		EntityObtainer eo = new EntityObtainer(em);
+		ReadOnlyConnection eo = new ReadOnlyConnection(em);
 		JpaReadOnlyEngineInput input = new JpaReadOnlyEngineInput();
 		input.setTemplate(templates.getTemplate("persons"));
 		input.setEntityObtainer(eo);
@@ -170,7 +170,7 @@ public class JpqlQueryTests extends ATest {
 		
 		
 		EntityManager em = emf.createEntityManager();
-		EntityModifier emod = new EntityModifier(em);
+		ReadWriteConnection emod = new ReadWriteConnection(em);
 		JpaReadWriteEngineInput input = new JpaReadWriteEngineInput();
 		input.setTemplate(templates.getTemplate("personsUpdate"));
 		input.setEntityModifier(emod);

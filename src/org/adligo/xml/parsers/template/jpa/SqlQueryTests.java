@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import org.adligo.i.adig.client.I_GCheckedInvoker;
-import org.adligo.i.storage.EntityModifier;
-import org.adligo.i.storage.EntityObtainer;
+import org.adligo.i.storage.ReadWriteConnection;
+import org.adligo.i.storage.ReadOnlyConnection;
 import org.adligo.i.storage.I_Query;
 import org.adligo.i.storage.StorageWrappers;
 import org.adligo.i.storage.entities.MockJpaDb;
@@ -93,7 +93,7 @@ public class SqlQueryTests extends ATest {
 		Template personsTemp = templates.getTemplate("persons");
 		
 		EntityManager em = emf.createEntityManager();
-		EntityObtainer eo = new EntityObtainer(em);
+		ReadOnlyConnection eo = new ReadOnlyConnection(em);
 		JpaReadOnlyEngineInput input = new JpaReadOnlyEngineInput();
 		input.setTemplate(personsTemp);
 		input.setEntityObtainer(eo);
@@ -124,7 +124,7 @@ public class SqlQueryTests extends ATest {
 		Template personsTemp = updateTemplates.getTemplate("insert");
 		
 		EntityManager em = emf.createEntityManager();
-		EntityModifier emod = new EntityModifier(em);
+		ReadWriteConnection emod = new ReadWriteConnection(em);
 		JpaReadWriteEngineInput input = new JpaReadWriteEngineInput();
 		input.setTemplate(personsTemp);
 		input.setEntityModifier(emod);
