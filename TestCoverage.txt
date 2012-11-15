@@ -1,2 +1,2 @@
-Date,Package,Coverage
-11/14/2012,org.adligo.xml.parsers.template.jpa,60.1%
+Date,Package,Coverage,Instructions
+11/14/2012,org.adligo.xml.parsers.template.jpa,60.1%,984
