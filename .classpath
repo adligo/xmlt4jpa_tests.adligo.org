@@ -12,8 +12,10 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/xmlt4jpa"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/tests"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="var" path="MVN_REPO/javax/javaee-api/6.0/javaee-api-6.0.jar"/>
-	<classpathentry kind="var" path="MVN_REPO/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+<classpathentry kind="var" path="MVN_REPO/org/apache/geronimo/specs/geronimo-ejb_3.1_spec/1.0/geronimo-ejb_3.1_spec-1.0.jar"/>
+		<classpathentry kind="var" path="MVN_REPO/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/geronimo-jpa_2.0_spec-1.0.jar"/>
+			
+<classpathentry kind="var" path="MVN_REPO/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
 	<classpathentry kind="var" path="MVN_REPO/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
 	<classpathentry kind="var" path="MVN_REPO/org/hibernate/common/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar"/>
 	<classpathentry kind="var" path="MVN_REPO/org/hibernate/hibernate-core/4.1.9.Final/hibernate-core-4.1.9.Final.jar"/>
