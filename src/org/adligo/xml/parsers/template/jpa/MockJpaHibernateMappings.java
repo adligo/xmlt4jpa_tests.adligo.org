@@ -2,7 +2,7 @@ package org.adligo.xml.parsers.template.jpa;
 
 import java.io.InputStream;
 
-import org.adligo.hibernate.storage.I_HibernateMappingProvider;
+import org.adligo.hibernate.db.I_HibernateMappingProvider;
 
 public class MockJpaHibernateMappings implements I_HibernateMappingProvider {
 

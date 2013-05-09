@@ -26,8 +26,8 @@
 	<classpathentry kind="var" path="MVN_REPO/hsqldb/hsqldb/1.8.0.7/hsqldb-1.8.0.7.jar"/>
 	<classpathentry kind="var" path="MVN_REPO/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar"/>
 	<classpathentry kind="var" path="MVN_REPO/commons-pool/commons-pool/1.6/commons-pool-1.6.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/hibernate_storage"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_db"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_db_tests"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hibernate_db"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
