@@ -8,11 +8,11 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import org.adligo.i.adig.client.I_GCheckedInvoker;
-import org.adligo.i.storage.ReadWriteConnection;
-import org.adligo.i.storage.ReadOnlyConnection;
-import org.adligo.i.storage.I_Query;
-import org.adligo.i.storage.StorageWrappers;
-import org.adligo.i.storage.entities.MockJpaDb;
+import org.adligo.i.db.I_Query;
+import org.adligo.i.db.ReadOnlyConnection;
+import org.adligo.i.db.ReadWriteConnection;
+import org.adligo.i.db.DbMethodWrappers;
+import org.adligo.i.db.entities.MockJpaDb;
 import org.adligo.models.params.client.Params;
 import org.adligo.models.params.client.SqlOperators;
 import org.adligo.tests.ATest;

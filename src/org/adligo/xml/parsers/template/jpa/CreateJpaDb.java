@@ -2,8 +2,8 @@ package org.adligo.xml.parsers.template.jpa;
 
 import org.adligo.i.adi.client.InvocationException;
 import org.adligo.i.adig.client.I_GCheckedInvoker;
-import org.adligo.i.storage.StorageWrappers;
-import org.adligo.i.storage.entities.MockJpaDb;
+import org.adligo.i.db.DbMethodWrappers;
+import org.adligo.i.db.entities.MockJpaDb;
 import org.adligo.xml.parsers.template.Templates;
 
 public class CreateJpaDb {
@@ -15,7 +15,7 @@ public class CreateJpaDb {
 			createDb = true;
 			
 			TemplateAsScriptExecutor scriptExecutor = new TemplateAsScriptExecutor();
-			I_GCheckedInvoker scriptInConnectionInvoker = StorageWrappers.createTransactionAndConnectionWrapper(
+			I_GCheckedInvoker scriptInConnectionInvoker = DbMethodWrappers.createTransactionAndConnectionWrapper(
 					scriptExecutor, 
 					MockJpaDb.TEST_DB_NAME);
 			TemplatesModifyEntityRequest request = new TemplatesModifyEntityRequest();
