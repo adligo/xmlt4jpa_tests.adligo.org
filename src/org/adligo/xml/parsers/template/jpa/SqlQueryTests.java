@@ -22,9 +22,9 @@ import org.adligo.xml.parsers.template.jdbc.BaseSqlOperators;
 
 public class SqlQueryTests extends ATest {
 	private Templates templates = new Templates(
-			"/org/adligo/tests/xml/parsers/template/jdbc/Persons2_0_SQL.xml", true);
+			"/org/adligo/tests/xml/parsers/template/jdbc/tests/Persons2_0_SQL.xml", true);
 	private Templates updateTemplates = new Templates(
-			"/org/adligo/tests/xml/parsers/template/jdbc/ExecuteUpdate.xml", true);
+			"/org/adligo/tests/xml/parsers/template/jdbc/tests/ExecuteUpdate.xml", true);
 	private EntityManagerFactory emf;
 	
 	public void setUp() throws Exception {

@@ -19,7 +19,7 @@ public class CreateJpaDb {
 					scriptExecutor, 
 					MockJpaDb.TEST_DB_NAME);
 			TemplatesModifyEntityRequest request = new TemplatesModifyEntityRequest();
-			request.setTemplates(new Templates("/org/adligo/tests/xml/parsers/template/jdbc/CreateTestDb.xml",
+			request.setTemplates(new Templates("/org/adligo/tests/xml/parsers/template/jdbc/tests/CreateTestDb.xml",
 					true));
 			scriptInConnectionInvoker.invoke(request);
 		}

@@ -28,6 +28,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/i_db"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_db_tests"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/hibernate_db"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/xmlt_tests.adligo.org"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/xmlt_tests"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
