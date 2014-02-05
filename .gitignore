@@ -4,4 +4,5 @@ classes/
 classes_e/
 test_reports/
 xmlt4jpa_tests.xml
+xmlt4jpa_tests.jar
 
