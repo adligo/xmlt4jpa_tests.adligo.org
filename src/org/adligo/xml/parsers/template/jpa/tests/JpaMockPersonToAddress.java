@@ -1,4 +1,4 @@
-package org.adligo.xml.parsers.template.jpa;
+package org.adligo.xml.parsers.template.jpa.tests;
 
 public class JpaMockPersonToAddress {
 	private Integer tid;

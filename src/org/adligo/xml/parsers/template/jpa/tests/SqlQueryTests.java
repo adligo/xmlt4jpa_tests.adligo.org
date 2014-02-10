@@ -1,4 +1,4 @@
-package org.adligo.xml.parsers.template.jpa;
+package org.adligo.xml.parsers.template.jpa.tests;
 
 import java.util.List;
 
@@ -19,12 +19,16 @@ import org.adligo.tests.ATest;
 import org.adligo.xml.parsers.template.Template;
 import org.adligo.xml.parsers.template.Templates;
 import org.adligo.xml.parsers.template.jdbc.BaseSqlOperators;
+import org.adligo.xml.parsers.template.jpa.JpaEngineInput;
+import org.adligo.xml.parsers.template.jpa.JpaReadOnlyEngineInput;
+import org.adligo.xml.parsers.template.jpa.JpaReadWriteEngineInput;
+import org.adligo.xml.parsers.template.jpa.JpaTemplateParserEngine;
 
 public class SqlQueryTests extends ATest {
 	private Templates templates = new Templates(
-			"/org/adligo/tests/xml/parsers/template/jdbc/tests/Persons2_0_SQL.xml", true);
+			"/org/adligo/tests/xml/parsers/template/tests/jdbc/Persons2_0_SQL.xml", true);
 	private Templates updateTemplates = new Templates(
-			"/org/adligo/tests/xml/parsers/template/jdbc/tests/ExecuteUpdate.xml", true);
+			"/org/adligo/tests/xml/parsers/template/tests/jdbc/ExecuteUpdate.xml", true);
 	private EntityManagerFactory emf;
 	
 	public void setUp() throws Exception {

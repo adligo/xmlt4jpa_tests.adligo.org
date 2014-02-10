@@ -3,7 +3,7 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
 <hibernate-mapping>
-   <class name="org.adligo.xml.parsers.template.jpa.JpaMockPerson" table="persons">
+   <class name="org.adligo.xml.parsers.template.jpa.tests.JpaMockPerson" table="persons">
         
             <id name="tid"/>
             <property name="version"/>
@@ -16,14 +16,14 @@
 	        <property name="birthday"/>
     </class>
     
-     <class name="org.adligo.xml.parsers.template.jpa.JpaMockPersonToAddress" table="persons_to_addresses">
+     <class name="org.adligo.xml.parsers.template.jpa.tests.JpaMockPersonToAddress" table="persons_to_addresses">
            <id name="tid"/>
            <property name="person"/>
            <property name="address"/>
            <property name="type"/>
     </class>
 
-     <class name="org.adligo.xml.parsers.template.jpa.JpaMockAddress" table="addresses">
+     <class name="org.adligo.xml.parsers.template.jpa.tests.JpaMockAddress" table="addresses">
             <id name="tid"/>
             <property name="version"/>
             <property name="country"/>

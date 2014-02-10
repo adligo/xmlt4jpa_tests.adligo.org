@@ -1,4 +1,4 @@
-package org.adligo.xml.parsers.template.jpa;
+package org.adligo.xml.parsers.template.jpa.tests;
 
 import java.util.List;
 import java.util.Set;
@@ -9,11 +9,9 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import javax.persistence.metamodel.EntityType;
 
-import org.adligo.i.adig.client.I_GCheckedInvoker;
 import org.adligo.i.db.I_TypedQuery;
 import org.adligo.i.db.ReadOnlyConnection;
 import org.adligo.i.db.ReadWriteConnection;
-import org.adligo.i.db.DbMethodWrappers;
 import org.adligo.i.db.entities.MockJpaDb;
 import org.adligo.models.params.client.Params;
 import org.adligo.models.params.client.SqlOperators;
@@ -21,10 +19,14 @@ import org.adligo.tests.ATest;
 import org.adligo.xml.parsers.template.Template;
 import org.adligo.xml.parsers.template.Templates;
 import org.adligo.xml.parsers.template.jdbc.BaseSqlOperators;
+import org.adligo.xml.parsers.template.jpa.JpaEngineInput;
+import org.adligo.xml.parsers.template.jpa.JpaReadOnlyEngineInput;
+import org.adligo.xml.parsers.template.jpa.JpaReadWriteEngineInput;
+import org.adligo.xml.parsers.template.jpa.JpaTemplateParserEngine;
 
 public class JpqlQueryTests extends ATest {
 	private Templates templates = new Templates(
-			"/org/adligo/xml/parsers/template/jpa/Persons1_0_JPQL.xml", true);
+			"/org/adligo/xml/parsers/template/jpa/tests/Persons1_0_JPQL.xml", true);
 	private EntityManagerFactory emf;
 	
 	public void setUp() throws Exception {

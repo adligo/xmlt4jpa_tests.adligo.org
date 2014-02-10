@@ -1,10 +1,12 @@
-package org.adligo.xml.parsers.template.jpa;
+package org.adligo.xml.parsers.template.jpa.tests;
 
 import org.adligo.i.adi.client.InvocationException;
 import org.adligo.i.adig.client.I_GCheckedInvoker;
 import org.adligo.i.db.DbMethodWrappers;
 import org.adligo.i.db.entities.MockJpaDb;
 import org.adligo.xml.parsers.template.Templates;
+import org.adligo.xml.parsers.template.jpa.TemplateAsScriptExecutor;
+import org.adligo.xml.parsers.template.jpa.TemplatesModifyEntityRequest;
 
 public class CreateJpaDb {
 	private static boolean createDb = false;
@@ -19,7 +21,7 @@ public class CreateJpaDb {
 					scriptExecutor, 
 					MockJpaDb.TEST_DB_NAME);
 			TemplatesModifyEntityRequest request = new TemplatesModifyEntityRequest();
-			request.setTemplates(new Templates("/org/adligo/tests/xml/parsers/template/jdbc/tests/CreateTestDb.xml",
+			request.setTemplates(new Templates("/org/adligo/tests/xml/parsers/template/tests/jdbc/CreateTestDb.xml",
 					true));
 			scriptInConnectionInvoker.invoke(request);
 		}
