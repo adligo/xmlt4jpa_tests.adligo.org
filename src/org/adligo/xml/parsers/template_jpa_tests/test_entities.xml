@@ -19,7 +19,7 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm classpath:/org/adligo/i/storage/orm_2_0.xsd"
     version="2.0">
     <description>Simple ORM</description>
-    <package>org.adligo.xml.parsers.template.jpa.tests</package>
+    <package>org.adligo.xml.parsers.template_jpa_tests</package>
     <entity class="JpaMockPerson" name="persons">
         <table name="persons"/>
         <attributes>

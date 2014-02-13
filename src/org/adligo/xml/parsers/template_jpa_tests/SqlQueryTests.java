@@ -1,4 +1,4 @@
-package org.adligo.xml.parsers.template.jpa.tests;
+package org.adligo.xml.parsers.template_jpa_tests;
 
 import java.util.List;
 
@@ -7,22 +7,20 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import org.adligo.i.adig.client.I_GCheckedInvoker;
 import org.adligo.i.db.I_Query;
 import org.adligo.i.db.ReadOnlyConnection;
 import org.adligo.i.db.ReadWriteConnection;
-import org.adligo.i.db.DbMethodWrappers;
-import org.adligo.i.db.entities.MockJpaDb;
-import org.adligo.models.params.client.Params;
-import org.adligo.models.params.client.SqlOperators;
+import org.adligo.i.db_tests.entities.MockJpaDb;
+import org.adligo.models.params.shared.Params;
+import org.adligo.models.params.shared.SqlOperators;
 import org.adligo.tests.ATest;
 import org.adligo.xml.parsers.template.Template;
 import org.adligo.xml.parsers.template.Templates;
 import org.adligo.xml.parsers.template.jdbc.BaseSqlOperators;
-import org.adligo.xml.parsers.template.jpa.JpaEngineInput;
-import org.adligo.xml.parsers.template.jpa.JpaReadOnlyEngineInput;
-import org.adligo.xml.parsers.template.jpa.JpaReadWriteEngineInput;
-import org.adligo.xml.parsers.template.jpa.JpaTemplateParserEngine;
+import org.adligo.xml.parsers.template_jpa.JpaEngineInput;
+import org.adligo.xml.parsers.template_jpa.JpaReadOnlyEngineInput;
+import org.adligo.xml.parsers.template_jpa.JpaReadWriteEngineInput;
+import org.adligo.xml.parsers.template_jpa.JpaTemplateParserEngine;
 
 public class SqlQueryTests extends ATest {
 	private Templates templates = new Templates(

@@ -1,4 +1,4 @@
-package org.adligo.xml.parsers.template.jpa.tests;
+package org.adligo.xml.parsers.template_jpa_tests;
 
 import java.io.InputStream;
 

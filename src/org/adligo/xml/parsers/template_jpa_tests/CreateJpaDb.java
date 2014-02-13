@@ -1,12 +1,12 @@
-package org.adligo.xml.parsers.template.jpa.tests;
+package org.adligo.xml.parsers.template_jpa_tests;
 
-import org.adligo.i.adi.client.InvocationException;
-import org.adligo.i.adig.client.I_GCheckedInvoker;
+import org.adligo.i.adi.shared.InvocationException;
+import org.adligo.i.adig.shared.I_GCheckedInvoker;
 import org.adligo.i.db.DbMethodWrappers;
-import org.adligo.i.db.entities.MockJpaDb;
+import org.adligo.i.db_tests.entities.MockJpaDb;
 import org.adligo.xml.parsers.template.Templates;
-import org.adligo.xml.parsers.template.jpa.TemplateAsScriptExecutor;
-import org.adligo.xml.parsers.template.jpa.TemplatesModifyEntityRequest;
+import org.adligo.xml.parsers.template_jpa.TemplateAsScriptExecutor;
+import org.adligo.xml.parsers.template_jpa.TemplatesModifyEntityRequest;
 
 public class CreateJpaDb {
 	private static boolean createDb = false;
