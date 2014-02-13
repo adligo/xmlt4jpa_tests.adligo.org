@@ -26,7 +26,7 @@ import org.adligo.xml.parsers.template_jpa.JpaTemplateParserEngine;
 
 public class JpqlQueryTests extends ATest {
 	private Templates templates = new Templates(
-			"/org/adligo/xml/parsers/template/jpa/tests/Persons1_0_JPQL.xml", true);
+			"/org/adligo/xml/parsers/template_jpa_tests/Persons1_0_JPQL.xml", true);
 	private EntityManagerFactory emf;
 	
 	public void setUp() throws Exception {

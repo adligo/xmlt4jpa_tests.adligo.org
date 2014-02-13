@@ -15,7 +15,7 @@ public class MockJpaHibernateMappings implements I_HibernateMappingProvider {
 	public InputStream get(int i) {
 		if (i == 0) {
 			return JpaMockPerson.class.getResourceAsStream(
-					"/org/adligo/xml/parsers/template/jpa/tests/test_entities.xml");
+					"/org/adligo/xml/parsers/template_jpa_tests/test_entities.xml");
 		}
 		return null;
 	}
