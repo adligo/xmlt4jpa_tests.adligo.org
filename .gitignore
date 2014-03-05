@@ -6,3 +6,4 @@ test_reports/
 xmlt4jpa_tests.xml
 xmlt4jpa_tests.jar
 
+/test_failure.properties
