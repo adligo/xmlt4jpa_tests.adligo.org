@@ -4,10 +4,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_log"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_util"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/params"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/xmlt"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/xmlt4jpa"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/tests"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/params.adligo.org"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/xmlt.adligo.org"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/xmlt4jpa.adligo.org"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/tests.adligo.org"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="var" path="MVN_REPO/org/apache/geronimo/specs/geronimo-ejb_3.1_spec/1.0/geronimo-ejb_3.1_spec-1.0.jar"/>
 	<classpathentry kind="var" path="MVN_REPO/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/geronimo-jpa_2.0_spec-1.0.jar"/>
@@ -26,7 +26,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/i_db"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_db_tests"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/hibernate_db"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/xmlt_tests"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/xmlt_tests.adligo.org"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_adi"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i_adig"/>
 	<classpathentry kind="output" path="bin"/>
