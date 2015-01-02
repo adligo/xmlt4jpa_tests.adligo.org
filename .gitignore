@@ -1,8 +1,8 @@
-/bin
-bin/
-classes/
-classes_e/
-test_reports/
+/bin/
+/build/
+/classes/
+/classes_e/
+/test_reports/
 xmlt4jpa_tests.xml
 xmlt4jpa_tests.jar
 
